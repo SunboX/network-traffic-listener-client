@@ -1,18 +1,18 @@
 {
-	"name": "webapp-traffic-listener",
+	"name": "network-traffic-listener-client",
 	"version": "0.0.1",
 	"description": "For internal use by valuephone GmbH",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SunboX/webapp-traffic-listener.git"
+		"url": "https://github.com/SunboX/network-traffic-listener-client.git"
 	},
 	"author": "André Fiedler <afiedler@valuephone.com> (http://valuephone.com/)",
 	"license": "CC BY-NC-ND 4.0",
 	"bugs": {
-		"url": "https://github.com/SunboX/webapp-traffic-listener/issues"
+		"url": "https://github.com/SunboX/network-traffic-listener-client/issues"
 	},
-	"homepage": "https://github.com/SunboX/webapp-traffic-listener",
+	"homepage": "https://github.com/SunboX/network-traffic-listener-client",
 	"dependencies": {
 		"mime": ">= 1.2.11"
 	}

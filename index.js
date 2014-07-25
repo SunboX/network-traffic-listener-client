@@ -4,7 +4,7 @@ var fs = require('fs'),
     mime = require('mime');
 
 module.exports = {
-	handleRequest: function(request, response, directoryRoot) {
+	handleRequest: function(request, response, config) {
 		var uri = url.parse(request.url).pathname.replace(directoryRoot, ''),
 			filename = path.join(__dirname, 'client', uri);
 		
@@ -30,7 +30,9 @@ module.exports = {
 				response.writeHead(200, {
 					'Content-Type': mime.lookup(filename)
 				});
-				file = file.replace(/\{\{directoryRoot\}\}/g, directoryRoot);
+				if (config.directoryRoot) {
+					file = file.replace(/\{\{directoryRoot\}\}/g, config.directoryRoot);
+				}
 				response.write(file, 'binary');
 				response.end();
 			});
