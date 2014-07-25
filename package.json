@@ -1,0 +1,19 @@
+{
+	"name": "webapp-traffic-listener",
+	"version": "0.0.1",
+	"description": "or internal use by valuephone GmbH",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SunboX/webapp-traffic-listener.git"
+	},
+	"author": "André Fiedler <afiedler@valuephone.com> (http://valuephone.com/)",
+	"license": "CC BY-NC-ND 4.0",
+	"bugs": {
+		"url": "https://github.com/SunboX/webapp-traffic-listener/issues"
+	},
+	"homepage": "https://github.com/SunboX/webapp-traffic-listener",
+	"dependencies": {
+		"mime": ">= 1.2.11"
+	},
+}

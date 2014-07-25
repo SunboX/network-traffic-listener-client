@@ -1,0 +1,277 @@
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    color: #001F5C;
+    font-family: verdana;
+    font-size: 11px;
+	-webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+	        user-select: none;
+}
+
+header {
+    background: #3F4F69 url("{{directoryRoot}}/topbg.png") repeat-x;
+    width: 100%;
+    height: 49px;
+    line-height: 52px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 3px;
+    cursor: default;
+}
+
+#logo {
+    margin: 0 0 7px 90px;
+    vertical-align: middle;
+}
+
+button {
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    background: #22BCE0;
+    font-weight: bold;
+    height: 27px;
+    padding: 0 15px 0 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:hover {
+	background: #FF8321;
+}
+
+#clear-session-btn {
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    background: #FF8321;
+}
+
+#clear-session-btn:hover {
+	background: #22BCE0;
+}
+
+a {
+    color: #3484DE;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FF8321;
+}
+
+table {
+	/* cellspacing="0" */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+	-webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+	        user-select: text;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+th {
+    cursor: default;
+}
+
+#session-screen {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+    height: calc(100% - 52px);
+}
+
+#session-screen[hidden] {
+    display: none;
+}
+
+#session-screen > div {
+    -webkit-flex: 1 1;
+            flex: 1 1;
+}
+
+#session-list {
+    width: 100%;
+}
+
+#session-list th {
+    text-align: left;
+    background: #212C40;
+    color: white;
+    line-height: 15px;
+}
+
+#session-list th.right {
+    text-align: right;
+}
+
+#session-list td {
+    cursor: pointer;
+    border-bottom: #9EAAB9 1px solid;
+    white-space: nowrap;
+}
+
+#session-list td.right {
+    text-align: right;
+}
+
+#session-list tr:hover td,
+#session-list tr.current td {
+    background: #EFEFEF;
+}
+
+#session-list tr.http500 {
+    color: #FF8321;
+}
+
+#session-list-scroller,
+#session-info {
+    height: 100%;
+}
+
+#session-info article {
+    height: 50%;
+}
+
+#session-list-scroller {
+    overflow: auto;
+    border-right: #3F4F69 2px solid;
+}
+
+#request-headers-scroller,
+#request-query-scroller,
+#response-headers-scroller {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#request-headers,
+#request-query,
+#response-headers {
+    min-width: 100%;
+}
+
+#request-headers tr,
+#request-query tr,
+#response-headers tr {
+    border-bottom: #9EAAB9 1px solid;
+}
+
+#request-headers td,
+#request-query td,
+#response-headers td {
+    white-space: nowrap;
+}
+
+#request-image-scroller,
+#response-image-scroller {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+
+#request-body,
+#response-body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	width: calc(100% - 40px);
+    height: calc(100% - 40px);
+}
+
+pre {
+    width: auto;
+    height: calc(100% - 12px);
+    margin: 0;
+}
+
+code {
+	display: block;
+    width: auto;
+    height: 100%;
+	overflow: auto;
+    font-size: 12px;
+    font-family: "Lucida Console", Monaco, monospace;
+	-webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+	        user-select: text;
+}
+
+.tabs {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #212C40;
+}
+
+.tabs section {
+    position: absolute;
+    display: block;
+    top: 25px;
+    left: 0;
+    height: 12em;
+    width: 100%;
+    height: calc(100% - 25px);
+    z-index: 0;
+}
+
+.tabs section:first-child {
+    z-index: 1;
+}
+
+.tabs section h2 {
+    position: absolute;
+    width: 120px;
+    height: 23px;
+    top: -23px;
+    left: 10px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: #3F4F69;
+    font-size: 11px;
+    line-height: 23px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tabs section:nth-child(2) h2 {
+    left: 132px;
+}
+
+.tabs section:nth-child(3) h2 {
+    left: 254px;
+}
+
+.tabs section.current,
+.tabs section.current h2 {
+    color: #001F5C;
+    background-color: white;
+    z-index: 2;
+}

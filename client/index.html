@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>valuephone network traffic listener</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="{{directoryRoot}}/style.css">
+</head>
+<body>
+
+	<header>
+        <img alt="" src="{{directoryRoot}}/logo.png" id="logo"> network traffic listener
+		<button id="clear-session-btn">Clear Sessions</button>
+	</header>
+
+	<section id="session-screen">
+		
+		<div id="session-list-scroller">
+			<table id="session-list">
+				<thead>
+					<tr>
+						<th>Result</th>
+						<th>Host</th>
+						<th>URL</th>
+						<th class="right">Response</th>
+						<th class="right">Transfer</th>
+						<th class="right">Total</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		
+		<div  id="session-info">
+			
+			<article class="tabs">
+
+				<section>
+					<h2>POST</h2>
+					<div id="request-body"></div>
+					<div id="request-image-scroller" hidden>
+						<img id="request-image" src="">
+					</div>
+				</section>
+
+				<section>
+					<h2>GET</h2>
+					<div id="request-query-scroller">
+						<table id="request-query"></table>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Headers</h2>
+					<div id="request-headers-scroller">
+						<table id="request-headers"></table>
+					</div>
+				</section>
+
+			</article>
+			
+			<article class="tabs">
+
+				<section>
+					<h2>Response</h2>
+					<div id="response-body"></div>
+					<div id="response-image-scroller" hidden>
+						<img id="response-image" src="">
+					</div>
+				</section>
+				
+				<section>
+					<h2>Headers</h2>
+					<div id="response-headers-scroller">
+						<table id="response-headers"></table>
+					</div>
+				</section>
+
+			</article>
+			
+		</div>
+		
+	</section>
+
+	<script src="{{directoryRoot}}/beautify-xml-json.js"></script>
+	<script src="{{directoryRoot}}/beautify-html.js"></script>
+	<script src="{{directoryRoot}}/beautify-js.js"></script>
+	<script src="{{directoryRoot}}/beautify-css.js"></script>
+	<script src="{{directoryRoot}}/require.js"></script>
+	<script src="{{directoryRoot}}/app.js"></script>
+</body>
+</html>
