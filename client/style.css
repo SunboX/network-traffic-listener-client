@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: #3F4F69 url("{{directoryRoot}}/topbg.png") repeat-x;
+    background: #3F4F69 url("topbg.png") repeat-x;
     width: 100%;
     height: 49px;
     line-height: 52px;
@@ -50,6 +50,7 @@ button:hover {
 	background: #FF8321;
 }
 
+#close-session-screen-btn,
 #clear-session-btn {
     position: absolute;
     top: 13px;
@@ -57,8 +58,23 @@ button:hover {
     background: #FF8321;
 }
 
+#close-session-screen-btn:hover,
 #clear-session-btn:hover {
 	background: #22BCE0;
+}
+
+select {
+    height: 27px;
+    padding: 4px 15px 0 15px;
+    vertical-align: middle;
+    color: #001F5C;
+    cursor: pointer;
+}
+
+option {
+    line-height: 27px;
+    padding: 0 15px 0 15px;
+    color: #001F5C;
 }
 
 a {
@@ -90,6 +106,50 @@ td {
 
 th {
     cursor: default;
+}
+
+label {
+    display: block;
+    font-size: 35px;
+    color: #102C65;
+    line-height: 74px;
+}
+
+.decent {
+    font-size: 22px;
+    color: #9EAAB9;
+    line-height: 30px;
+}
+
+#home-screen {
+    padding: 50px 50px 50px 90px;
+}
+
+#user-agents-panel {
+    margin-bottom: 50px;
+}
+
+#user-agents {
+    min-width: 300px;
+    max-width: 80%;
+}
+
+#root-cert-panel {
+    font-size: 15px;
+	line-height: 20px;
+}
+
+#cert-icon {
+	height: 20px;
+	width: 20px;
+	display: inline;
+	fill: #3484DE;
+	vertical-align: middle;
+	margin-bottom: 3px;
+}
+
+a:hover #cert-icon {
+	fill: #FF8321;
 }
 
 #session-screen {
@@ -274,4 +334,20 @@ code {
     color: #001F5C;
     background-color: white;
     z-index: 2;
+}
+
+#install-root-cert-panel {
+	position: absolute;
+	left: auto;
+	right: auto;
+	margin: 50px;
+	text-align: center;
+	font-size: 25px;
+}
+
+#install-root-cert-panel  #cert-icon {
+	display: inline;
+	height: 100px;
+	width: 84px;
+	margin: 20px;
 }

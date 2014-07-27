@@ -1,19 +1,28 @@
 {
-	"name": "network-traffic-listener-client",
-	"version": "0.0.1",
-	"description": "For internal use by valuephone GmbH",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/SunboX/network-traffic-listener-client.git"
-	},
-	"author": "André Fiedler <afiedler@valuephone.com> (http://valuephone.com/)",
-	"license": "CC BY-NC-ND 4.0",
-	"bugs": {
-		"url": "https://github.com/SunboX/network-traffic-listener-client/issues"
-	},
-	"homepage": "https://github.com/SunboX/network-traffic-listener-client",
-	"dependencies": {
-		"mime": ">= 1.2.11"
-	}
+  "name": "network-traffic-listener-client",
+  "version": "0.0.1",
+  "description": "For internal use by valuephone GmbH",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SunboX/network-traffic-listener-client.git"
+  },
+  "author": {
+    "name": "André Fiedler",
+    "email": "afiedler@valuephone.com",
+    "url": "http://valuephone.com/"
+  },
+  "license": "CC BY-NC-ND 4.0",
+  "bugs": {
+    "url": "https://github.com/SunboX/network-traffic-listener-client/issues"
+  },
+  "homepage": "https://github.com/SunboX/network-traffic-listener-client",
+  "dependencies": {
+    "mime": ">= 1.2.11"
+  },
+  "readme": "network-traffic-listener-client\r\n===============================\r\n\r\nFor internal use by valuephone GmbH\r\n",
+  "readmeFilename": "README.md",
+  "_id": "network-traffic-listener-client@0.0.1",
+  "_shasum": "cbec4a3ff03c726d353fc1ef31a165eb90da0a27",
+  "_from": "network-traffic-listener-client@"
 }

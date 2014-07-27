@@ -42,7 +42,9 @@ require([
 	}
 
 	var self = this,
-		selectedSession,
+		recievedUserAgents = [],
+		selectedUserAgent, selectedSession,
+		userAgents = document.getElementById('user-agents'),
 		sessionList = document.getElementById('session-list').querySelector('tbody'),
 		requestHeaders = document.getElementById('request-headers'),
 		requestQuery = document.getElementById('request-query'),
@@ -71,9 +73,18 @@ require([
 	self.responseEditor.setOptions(editorOptions)
 	self.responseEditor.renderer.$cursorLayer.element.style.opacity = 0;
 	self.responseEditor.commands.commandKeyBinding = {};
+	
+	if (config.showUserAgentSelection) {
+		document.getElementById('home-screen').hidden = false;
+	}
+	else {
+		document.getElementById('clear-session-btn').hidden = false;
+		document.getElementById('session-screen').hidden = false;
+	}
 
 	function clearAllSessionsLogs() {
 		sessionList.empty();
+		selectedUserAgent = null;
 		selectedSession = null;
 		self.requestEditor.setValue('');
 		self.responseEditor.setValue('');
@@ -82,6 +93,24 @@ require([
 		requestHeaders.empty();
 		responseHeaders.empty();
 	}
+
+	document.getElementById('start-session').addEventListener('click', function() {
+
+		selectedUserAgent = userAgents.options[userAgents.selectedIndex].value;
+
+		document.getElementById('home-screen').hidden = true;
+		document.getElementById('session-screen').hidden = false;
+		document.getElementById(config.showUserAgentSelection ? 'close-session-screen-btn' : 'clear-session-btn').hidden = false;
+	});
+
+	document.getElementById('close-session-screen-btn').addEventListener('click', function() {
+
+		document.getElementById('home-screen').hidden = false;
+		document.getElementById('session-screen').hidden = true;
+		document.getElementById('close-session-screen-btn').hidden = true;
+
+		clearAllSessionsLogs();
+	});
 
 	document.getElementById('clear-session-btn').addEventListener('click', function() {
 		clearAllSessionsLogs();
@@ -249,8 +278,28 @@ require([
 
 	var source = new EventSource('/debugger-listen');
 
+	source.addEventListener('user-agent-found', function(e) {
+		var userAgent = JSON.parse(e.data),
+			ipAndName = userAgent.remoteAddress + ' | ' + userAgent.name;
+
+		if (recievedUserAgents.indexOf(ipAndName) > -1) {
+			return;
+		}
+		recievedUserAgents.push(ipAndName);
+		var option = document.createElement('option'),
+			text = document.createTextNode(ipAndName);
+
+		option.value = userAgent.remoteAddress;
+		option.appendChild(text);
+		userAgents.appendChild(option);
+	});
+
 	source.addEventListener('session-info', function(e) {
 		var sessionInfo = JSON.parse(e.data);
+
+		if (sessionInfo.request.remoteAddress != selectedUserAgent) {
+			return;
+		}
 
 		var tr = document.createElement('tr');
 
@@ -330,9 +379,18 @@ require([
 
 			case 27:
 				// escape key
+				selectedUserAgent = null;
 				selectedSession = null;
+
+				if (config.showUserAgentSelection) {
+					document.getElementById('home-screen').hidden = false;
+					document.getElementById('session-screen').hidden = true;
+					document.getElementById('close-session-screen-btn').hidden = true;
+				}
+
 				clearAllSessionsLogs();
 				break;
 		}
 	});
 });
+
