@@ -183,7 +183,7 @@ require([
 		'html': /text\/html.*/,
 		'javascript': /text\/javascript.*/,
 		'javascript': /application\/javascript.*/,
-		'json': '/application\/json.*/',
+		'json': /application\/json.*/,
 		'css': /text\/css.*/,
 		'text': /text\/plain.*/,
 		'png': /image\/png.*/,

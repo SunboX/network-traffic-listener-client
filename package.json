@@ -1,6 +1,6 @@
 {
   "name": "network-traffic-listener-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "For internal use by valuephone GmbH",
   "main": "index.js",
   "repository": {
